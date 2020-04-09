@@ -69,7 +69,7 @@ func (sb *SelectBuilder) Distinct() *SelectBuilder {
 
 // Select sets columns in SELECT.
 func (sb *SelectBuilder) Select(col ...string) *SelectBuilder {
-	sb.selectCols = append(sb.selectCols, col)
+	sb.selectCols = append(sb.selectCols, col...)
 	return sb
 }
 
@@ -124,7 +124,7 @@ func (sb *SelectBuilder) GroupBy(col ...string) *SelectBuilder {
 
 // OrderBy sets columns of ORDER BY in SELECT.
 func (sb *SelectBuilder) OrderBy(col ...string) *SelectBuilder {
-	sb.orderByCols = append(sb.orderByCols, col)
+	sb.orderByCols = append(sb.orderByCols, col...)
 	return sb
 }
 
